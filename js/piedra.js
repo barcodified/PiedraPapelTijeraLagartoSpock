@@ -6,11 +6,15 @@ function Aleatorio(min, max) {
 var options = ["Piedra", "Papel", "Tijeras", "Lagarto", "Spock"];
 
 var userOption = parseInt(prompt("Haz tu elección :\nPiedra > escoge 0\nPapel > escoge 1\nTijera > escoge 2\nLagarto > escoge 3\nSpock > escoge 4", 0));
-if(userOption==[0-4]){
+
+if (isNaN(userOption)){
+	alert("Has escogido un valor no numérico");
+}else if((userOption==0)||(userOption==1)||(userOption==2)||(userOption==3)||(userOption==4)){
 	alert("Has escogido " + options[userOption]);
 }else{
 	alert("Has escogido " + userOption);
 }
+
 var machineOption = Aleatorio(0,4);
 alert("La computadora eligió " + options[machineOption]);
 
@@ -74,6 +78,6 @@ if(userOption==0){
 	}else if(machineOption==4){
 		alert("Has empatado contra la máquina\n( Spock vs Spock )");
 	}
-}else if (userOption!=[0-4]){
+}else if ((userOption!=0)||(userOption!=1)||(userOption!=2)||(userOption!=3)||(userOption!=4)){
 	alert("El valor introducido es erróneo\n( Recuerda que debes introducir valores del 0 al 4 )");
 }
